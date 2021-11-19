@@ -3,12 +3,22 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<Nullable>enable</Nullable>
+		<Title>Pericia.CleverCloudHelper</Title>
+		<Authors>Guillaume Lacasa</Authors>
+		<Description>Helpers to deploy .NET apps to Clever Cloud</Description>
+		<PackageProjectUrl>https://github.com/pericia/Pericia.CleverCloudHelper</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/pericia/Pericia.CleverCloudHelper.git</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.2.0" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.21" />
 	</ItemGroup>
-
 
 </Project>
