@@ -15,16 +15,11 @@ namespace Pericia.CleverCloudHelper
         {
             services.Configure<ForwardedHeadersOptions>(options =>
             {
-                options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+                options.ForwardedHeaders = ForwardedHeaders.All;
 
-                var proxyIps = Environment.GetEnvironmentVariable("CC_REVERSE_PROXY_IPS");
-                if (!string.IsNullOrEmpty(proxyIps))
+                foreach (var ip in CcEnvironment.ReverseProxyIps)
                 {
-                    var ips = proxyIps.Split(',');
-                    foreach (var ip in ips)
-                    {
-                        options.KnownProxies.Add(IPAddress.Parse(ip));
-                    }
+                    options.KnownProxies.Add(IPAddress.Parse(ip));
                 }
             });
 

@@ -26,6 +26,34 @@ Ajoutez l'appel à la méthode `services.ConfigureCcProxy();` dans `ConfigureServi
         });
     }
 
+## Variables d'environnement
+
+[Les principales variables d'environnement](https://www.clever-cloud.com/doc/reference/reference-environment-variables/) sont accessibles depuis la classe statique `CcEnvironment`.
+
+### Common
+
+| Variable d'environnement | Propriété          | Type     | Notes |
+| ------------------------ | ------------------ | -------- | ----- |
+| INSTANCE_NUMBER          | InstanceNumber     | int      | -1 si la variable d'environnement n'est pas définie |
+| INSTANCE_TYPE            | InstanceType       | string   | |
+| INSTANCE_ID              | InstanceId         | string   | |
+| CC_PRETTY_INSTANCE_NAME  | PrettyInstanceName | string   | |
+| APP_ID                   | AppId              | string   | |
+| APP_HOME                 | AppHomePath        | string   | |
+| CC_DEPLOYMENT_ID         | DeploymentId       | string   | |
+| COMMIT_ID                | CommitId           | string   | |
+| CC_REVERSE_PROXY_IPS     | ReverseProxyIps    | string[] | |
+
+### .NET
+
+| Variable d'environnement | Propriété          | Type   | Notes |
+| ------------------------ | ------------------ | ------ | ----- |
+| CC_DOTNET_VERSION        | DotnetVersion      | string | |
+| CC_DOTNET_PROJ           | DotnetProj         | string | |
+| CC_DOTNET_TFM            | DotnetTfm          | string | |
+| CC_DOTNET_PROFILE        | DotnetProfile      | string | |
+| CC_RUN_COMMAND           | RunCommand         | string | |
+
 ## Chargement des ConnectionStrings
 
 Lorsqu'on déploie une application liée à une base de données, les informations de connexion sont accessibles sous forme de variables d'environnement.
