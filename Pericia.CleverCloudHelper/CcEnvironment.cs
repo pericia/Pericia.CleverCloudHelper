@@ -47,6 +47,48 @@ namespace Pericia.CleverCloudHelper
         public static string DotnetProfile => Environment.GetEnvironmentVariable("CC_DOTNET_PROFILE") ?? "";
         public static string RunCommand => Environment.GetEnvironmentVariable("CC_RUN_COMMAND") ?? "";
 
+
+        // MySQL
+
+        public static string MysqlHost => Environment.GetEnvironmentVariable("MYSQL_ADDON_HOST") ?? "";
+        public static string MysqlPort => Environment.GetEnvironmentVariable("MYSQL_ADDON_PORT") ?? "";
+        public static string MysqlDatabase => Environment.GetEnvironmentVariable("MYSQL_ADDON_DB") ?? "";
+        public static string MysqlUser => Environment.GetEnvironmentVariable("MYSQL_ADDON_USER") ?? "";
+        public static string MysqlPassword => Environment.GetEnvironmentVariable("MYSQL_ADDON_PASSWORD") ?? "";
+
+        public static string? MySqlConnectionString
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(MysqlHost))
+                {
+                    return null;
+                }
+
+                return $"Server={MysqlHost};Port={MysqlPort};Database={MysqlDatabase};Uid={MysqlUser};Pwd={MysqlPassword};";
+            }
+        }
+
+        // PostgresSql
+        public static string PgsqlHost => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_HOST") ?? "";
+        public static string PgsqlPort => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_PORT") ?? "";
+        public static string PgsqlDatabase => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_DB") ?? "";
+        public static string PgsqlUser => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_HOST") ?? "";
+        public static string PgsqlPassword => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_HOST") ?? "";
+
+        public static string? PgsqlConnectionString
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(PgsqlHost))
+                {
+                    return null;
+                }
+
+                return $"Server={PgsqlHost};Port={PgsqlPort};Database={PgsqlDatabase};User ID={PgsqlUser};Password={PgsqlPassword};";
+            }
+        }
+
     }
 
 }

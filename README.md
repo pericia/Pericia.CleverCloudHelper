@@ -60,8 +60,8 @@ Lorsqu'on déploie une application liée à une base de données, les informations d
 
 Pour les utiliser plus facilement, cette librairie les renvoie sous forme de ConnectionString :
 
-    CcConnectionStrings.MySql
-    CcConnectionStrings.PostgreSql
+    CcEnvironment.MySqlConnectionString
+    CcEnvironment.PgsqlConnectionString
 
 Afin de pouvoir utiliser des valeurs différentes sur son poste de développement, ajoutez les chaines de connexion dans votre fichier `appsettings.Development.json` ou vos user secrets
 
@@ -78,5 +78,5 @@ Vous pouvez utiliser ensuite les méthodes d'extensions suivantes :
     Configuration.MySqlConnectionString();
     Configuration.PostgreSqlConnectionString();
 
-Ces méthodes vont d'abord vérifier si la chaine de connexion est définie dans la configuration, et si elle est absente va renvoyer la valeur Clever Cloud. Aussi il est important
-de ne pas définir vos chaines de connexion dans le `appsettings.json` principal.
+Ces méthodes vont récupérer les chaines de connexion depuis les variables d'environnement.  
+Lorsque la variable d'environnement n'est pas définie sur votre poste de développement, elle est récupérée depuis la configuration (`configuration.GetConnectionString(name)`).
