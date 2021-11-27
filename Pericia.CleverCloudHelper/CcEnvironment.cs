@@ -8,17 +8,17 @@ namespace Pericia.CleverCloudHelper
     {
         // App and Instance info
 
-        public static int InstanceNumber
+        public static int? InstanceNumber
         {
             get
             {
-                var number = Environment.GetEnvironmentVariable("INSTANCE_NUMBER") ?? "";
-                if (int.TryParse(null, out int result))
+                var number = Environment.GetEnvironmentVariable("INSTANCE_NUMBER");
+                if (!string.IsNullOrEmpty(number) && int.TryParse(number, out int result))
                 {
                     return result;
                 }
 
-                return -1;
+                return null;
             }
         }
 

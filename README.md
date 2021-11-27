@@ -25,7 +25,7 @@ Afin d'accéder à ces connection strings depuis la configuration, vous pouvez app
                 
                 if (ctx.HostingEnvironment.IsDevelopment())
                 {
-                    builder.AddUserSecrets<App>();
+                    builder.AddUserSecrets<Startup>();
                 }
             })
             .UseStartup<Startup>()
