@@ -73,8 +73,8 @@ namespace Pericia.CleverCloudHelper
         public static string PgsqlHost => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_HOST") ?? "";
         public static string PgsqlPort => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_PORT") ?? "";
         public static string PgsqlDatabase => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_DB") ?? "";
-        public static string PgsqlUser => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_HOST") ?? "";
-        public static string PgsqlPassword => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_HOST") ?? "";
+        public static string PgsqlUser => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_USER") ?? "";
+        public static string PgsqlPassword => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_PASSWORD") ?? "";
 
         public static string? PgsqlConnectionString
         {

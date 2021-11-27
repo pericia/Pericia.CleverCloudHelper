@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 
 namespace Pericia.CleverCloudHelper
@@ -14,19 +15,15 @@ namespace Pericia.CleverCloudHelper
 
         public override void Load()
         {
-            var data = new Dictionary<string, string>();
-
             if (CcEnvironment.PgsqlConnectionString != null)
             {
-                data.Add(connectionStringsNames.PostgreSqlKey, CcEnvironment.PgsqlConnectionString);
+                Data.Add(connectionStringsNames.PostgreSqlKey, CcEnvironment.PgsqlConnectionString);
             }
 
             if (CcEnvironment.MySqlConnectionString != null)
             {
-                data.Add(connectionStringsNames.MySqlKey, CcEnvironment.MySqlConnectionString);
+                Data.Add(connectionStringsNames.MySqlKey, CcEnvironment.MySqlConnectionString);
             }
-
-            Data = Data;
         }
     }
 
