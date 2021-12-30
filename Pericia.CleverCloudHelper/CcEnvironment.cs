@@ -89,6 +89,18 @@ namespace Pericia.CleverCloudHelper
             }
         }
 
+        // MongoDB
+        public static string MongodbDb => Environment.GetEnvironmentVariable("MONGODB_ADDON_DB") ?? "";
+        public static string MongodbUser => Environment.GetEnvironmentVariable("MONGODB_ADDON_USER") ?? "";
+        public static string MongodbPassword => Environment.GetEnvironmentVariable("MONGODB_ADDON_PASSWORD") ?? "";
+        
+        
+        // Redis
+        public static string RedisHost => Environment.GetEnvironmentVariable("REDIS_HOST") ?? "";
+        public static string RedisPort => Environment.GetEnvironmentVariable("REDIS_PORT") ?? "";
+        public static string RedisPassword => Environment.GetEnvironmentVariable("REDIS_PASSWORD") ?? "";
+
+
     }
 
 }

@@ -27,18 +27,15 @@ namespace Pericia.CleverCloudHelper
             return services;
         }
 
-        public static IConfigurationBuilder AddCcConnectionStrings(this IConfigurationBuilder builder)
-            => AddCcConnectionStrings(builder, null!);
-
-        public static IConfigurationBuilder AddCcConnectionStrings(this IConfigurationBuilder builder, Action<ConnectionStringsOptions> configureConnectionStrings)
+        public static IConfigurationBuilder AddCcEnvironment(this IConfigurationBuilder builder, Action<EnvironmentOptions>? configureEnvironment = null)
         {
-            var connectionStringsNames = new ConnectionStringsOptions();
-            if (configureConnectionStrings != null)
+            var environmentOptions = new EnvironmentOptions();
+            if (configureEnvironment != null)
             {
-                configureConnectionStrings(connectionStringsNames);
+                configureEnvironment(environmentOptions);
             }
 
-            builder.Add(new CleverCloudConnectionStringsConfigurationSource(connectionStringsNames));
+            builder.Add(new CleverCloudEnvironmentConfigurationSource(environmentOptions));
             return builder;
         }
     }

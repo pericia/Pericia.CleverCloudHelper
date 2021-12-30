@@ -19,8 +19,8 @@ Afin d'accéder à ces connection strings depuis la configuration, vous pouvez app
             {
                 builder.SetBasePath(Directory.GetCurrentDirectory())
                             .AddJsonFile("appsettings.json")
-                            .AddJsonFile($"appsettings.{ctx.HostingEnvironment.EnvironmentName}.json", optional: true);
-                            .AddCcConnectionStrings()
+                            .AddJsonFile($"appsettings.{ctx.HostingEnvironment.EnvironmentName}.json", optional: true)
+                            .AddCcEnvironment()
                             .AddEnvironmentVariables();
                 
                 if (ctx.HostingEnvironment.IsDevelopment())
@@ -72,28 +72,55 @@ Ajoutez l'appel à la méthode `services.ConfigureCcProxy();` dans `ConfigureServi
 
 ## Variables d'environnement
 
-[Les principales variables d'environnement](https://www.clever-cloud.com/doc/reference/reference-environment-variables/) sont accessibles depuis la classe statique `CcEnvironment`.
+[Les principales variables d'environnement](https://www.clever-cloud.com/doc/reference/reference-environment-variables/) sont accessibles depuis la classe statique `CcEnvironment`,
+ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnvironment()`).
+
+
 
 ### Common
 
-| Variable d'environnement | Propriété          | Type     | Notes |
-| ------------------------ | ------------------ | -------- | ----- |
-| INSTANCE_NUMBER          | InstanceNumber     | int      | -1 si la variable d'environnement n'est pas définie |
-| INSTANCE_TYPE            | InstanceType       | string   | |
-| INSTANCE_ID              | InstanceId         | string   | |
-| CC_PRETTY_INSTANCE_NAME  | PrettyInstanceName | string   | |
-| APP_ID                   | AppId              | string   | |
-| APP_HOME                 | AppHomePath        | string   | |
-| CC_DEPLOYMENT_ID         | DeploymentId       | string   | |
-| COMMIT_ID                | CommitId           | string   | |
-| CC_REVERSE_PROXY_IPS     | ReverseProxyIps    | string[] | |
+| Variable d'environnement | Propriété          | Clé configuration              | Type     |
+| ------------------------ | ------------------ | ------------------------------ | -------- |
+| INSTANCE_NUMBER          | InstanceNumber     | CleverCloud:InstanceNumber     | int?     |
+| INSTANCE_TYPE            | InstanceType       | CleverCloud:InstanceType       | string   |
+| INSTANCE_ID              | InstanceId         | CleverCloud:InstanceId         | string   |
+| CC_PRETTY_INSTANCE_NAME  | PrettyInstanceName | CleverCloud:PrettyInstanceName | string   |
+| APP_ID                   | AppId              | CleverCloud:AppId              | string   |
+| APP_HOME                 | AppHomePath        | CleverCloud:AppHomePath        | string   |
+| CC_DEPLOYMENT_ID         | DeploymentId       | CleverCloud:DeploymentId       | string   |
+| COMMIT_ID                | CommitId           | CleverCloud:CommitId           | string   |
+| CC_REVERSE_PROXY_IPS     | ReverseProxyIps    |                                | string[] |
 
 ### .NET
 
-| Variable d'environnement | Propriété          | Type   | Notes |
-| ------------------------ | ------------------ | ------ | ----- |
-| CC_DOTNET_VERSION        | DotnetVersion      | string | |
-| CC_DOTNET_PROJ           | DotnetProj         | string | |
-| CC_DOTNET_TFM            | DotnetTfm          | string | |
-| CC_DOTNET_PROFILE        | DotnetProfile      | string | |
-| CC_RUN_COMMAND           | RunCommand         | string | |
+| Variable d'environnement | Propriété          | Type   |
+| ------------------------ | ------------------ | ------ |
+| CC_DOTNET_VERSION        | DotnetVersion      | string |
+| CC_DOTNET_PROJ           | DotnetProj         | string |
+| CC_DOTNET_TFM            | DotnetTfm          | string |
+| CC_DOTNET_PROFILE        | DotnetProfile      | string |
+| CC_RUN_COMMAND           | RunCommand         | string |
+
+### Addons
+
+| Variable d'environnement  | Propriété             | Clé configuration            | Type   |
+| ------------------------- | --------------------- | ---------------------------- | ------ |
+| POSTGRESQL_ADDON_HOST     | PgsqlHost             | PostgreSql:Host              | string |
+| POSTGRESQL_ADDON_PORT     | PgsqlPort             | PostgreSql:Port              | string |
+| POSTGRESQL_ADDON_DB       | PgsqlDatabase         | PostgreSql:Database          | string |
+| POSTGRESQL_ADDON_USER     | PgsqlUser             | PostgreSql:User              | string |
+| POSTGRESQL_ADDON_PASSWORD | PgsqlPassword         | PostgreSql:Password          | string |
+|                           | PgsqlConnectionString | ConnectionStrings:PostgreSql | string |
+| MYSQL_ADDON_HOST          | MysqlHost             | MySql:Host                   | string |
+| MYSQL_ADDON_PORT          | MysqlPort             | MySql:Port                   | string |
+| MYSQL_ADDON_DB            | MysqlDatabase         | MySql:Database               | string |
+| MYSQL_ADDON_USER          | MysqlUser             | MySql:User                   | string |
+| MYSQL_ADDON_PASSWORD      | MysqlPassword         | MySql:Password               | string |
+|                           | MySqlConnectionString | ConnectionStrings:MySql      | string |
+| MONGODB_ADDON_DB          | MongodbDb             | MongoDb:Database             | string |
+| MONGODB_ADDON_USER        | MongodbUser           | MongoDb:User                 | string |
+| MONGODB_ADDON_PASSWORD    | MongodbPassword       | MongoDb:Password             | string |
+| REDIS_HOST                | RedisHost             | Redis:Host                   | string |
+| REDIS_PORT                | RedisPort             | Redis:Port                   | string |
+| REDIS_PASSWORD            | RedisPassword         | Redis:Password               | string |
+
