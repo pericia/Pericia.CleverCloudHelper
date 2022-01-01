@@ -93,13 +93,28 @@ namespace Pericia.CleverCloudHelper
         public static string MongodbDb => Environment.GetEnvironmentVariable("MONGODB_ADDON_DB") ?? "";
         public static string MongodbUser => Environment.GetEnvironmentVariable("MONGODB_ADDON_USER") ?? "";
         public static string MongodbPassword => Environment.GetEnvironmentVariable("MONGODB_ADDON_PASSWORD") ?? "";
-        
-        
+
+
         // Redis
         public static string RedisHost => Environment.GetEnvironmentVariable("REDIS_HOST") ?? "";
         public static string RedisPort => Environment.GetEnvironmentVariable("REDIS_PORT") ?? "";
         public static string RedisPassword => Environment.GetEnvironmentVariable("REDIS_PASSWORD") ?? "";
 
+        // ElasticSearch
+
+        public static string ElasticsearchUri => Environment.GetEnvironmentVariable("ES_ADDON_URI") ?? "";
+        public static string ElasticsearchHost => Environment.GetEnvironmentVariable("ES_ADDON_HOST") ?? "";
+        public static string ElasticsearchUser => Environment.GetEnvironmentVariable("ES_ADDON_USER") ?? "";
+        public static string ElasticsearchPassword => Environment.GetEnvironmentVariable("ES_ADDON_PASSWORD") ?? "";
+
+        public static string KibanaHost => Environment.GetEnvironmentVariable("ES_ADDON_KIBANA_HOST") ?? "";
+        public static string KibanaUser => Environment.GetEnvironmentVariable("ES_ADDON_KIBANA_USER") ?? "";
+        public static string KibanaPassword => Environment.GetEnvironmentVariable("ES_ADDON_KIBANA_PASSWORD") ?? "";
+
+        public static string ApmHost => Environment.GetEnvironmentVariable("ES_ADDON_APM_HOST") ?? "";
+        public static string ApmAuthToken => Environment.GetEnvironmentVariable("ES_ADDON_APM_AUTH_TOKEN") ?? "";
+        public static string ApmUser => Environment.GetEnvironmentVariable("ES_ADDON_APM_USER") ?? "";
+        public static string ApmPassword => Environment.GetEnvironmentVariable("ES_ADDON_APM_PASSWORD") ?? "";
 
     }
 

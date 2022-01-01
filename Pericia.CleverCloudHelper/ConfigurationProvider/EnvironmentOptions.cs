@@ -21,7 +21,7 @@ namespace Pericia.CleverCloudHelper
         public string PgsqlPasswordKey { get; set; } = "PostgreSql:Password";
         public string PgsqlPortKey { get; set; } = "PostgreSql:Port";
         public string PgsqlConnStringKey { get; set; } = "ConnectionStrings:PostgreSql";
-        
+
         public string MySqlHostKey { get; set; } = "MySql:Host";
         public string MySqlDbKey { get; set; } = "MySql:Database";
         public string MySqlUserKey { get; set; } = "MySql:User";
@@ -36,6 +36,21 @@ namespace Pericia.CleverCloudHelper
         public string RedisHostKey { get; set; } = "Redis:Host";
         public string RedisPortKey { get; set; } = "Redis:Port";
         public string RedisPasswordtKey { get; set; } = "Redis:Password";
+
+
+        public string ElasticsearchUriKey { get; set; } = "Elastic:Uri";
+        public string ElasticsearchHostKey { get; set; } = "Elastic:Host";
+        public string ElasticsearchUserKey { get; set; } = "Elastic:User";
+        public string ElasticsearchPasswordKey { get; set; } = "Elastic:Password";
+
+        public string KibanaHostKey { get; set; } = "Kibana:Host";
+        public string KibanaUserKey { get; set; } = "Kibana:User";
+        public string KibanaPasswordKey { get; set; } = "Kibana:Password";
+
+        public string ApmHostKey { get; set; } = "Apm:Host";
+        public string ApmAuthTokenKey { get; set; } = "Apm:AuthToken";
+        public string ApmUserKey { get; set; } = "Apm:User";
+        public string ApmPasswordKey { get; set; } = "Apm:Password";
 
     }
 }

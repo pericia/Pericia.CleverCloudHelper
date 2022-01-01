@@ -123,4 +123,15 @@ ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnviron
 | REDIS_HOST                | RedisHost             | Redis:Host                   | string |
 | REDIS_PORT                | RedisPort             | Redis:Port                   | string |
 | REDIS_PASSWORD            | RedisPassword         | Redis:Password               | string |
+| ES_ADDON_URI              | ElasticsearchUri      | Elastic:Uri                  | string |
+| ES_ADDON_HOST             | ElasticsearchHost     | Elastic:Host                 | string |
+| ES_ADDON_USER             | ElasticsearchUser     | Elastic:User                 | string |
+| ES_ADDON_PASSWORD         | ElasticsearchPassword | Elastic:Password             | string |
+| ES_ADDON_KIBANA_HOST      | KibanaHost            | Kibana:Host                  | string |
+| ES_ADDON_KIBANA_USER      | KibanaUser            | Kibana:User                  | string |
+| ES_ADDON_KIBANA_PASSWORD  | KibanaPassword        | Kibana:Password              | string |
+| ES_ADDON_APM_HOST         | ApmHost               | Apm:Host                     | string |
+| ES_ADDON_APM_AUTH_TOKEN   | ApmAuthToken          | Apm:AuthToken                | string |
+| ES_ADDON_APM_USER         | ApmUser               | Apm:User                     | string |
+| ES_ADDON_APM_PASSWORD     | ApmPassword           | Apm:Password                 | string |
 
