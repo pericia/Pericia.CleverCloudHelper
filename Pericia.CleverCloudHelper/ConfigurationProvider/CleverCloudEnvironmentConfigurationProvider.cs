@@ -45,6 +45,20 @@ namespace Pericia.CleverCloudHelper
             AddValue(environmentOptions.RedisHostKey, CcEnvironment.RedisHost);
             AddValue(environmentOptions.RedisPortKey, CcEnvironment.RedisPort);
             AddValue(environmentOptions.RedisPasswordtKey, CcEnvironment.RedisPassword);
+
+            AddValue(environmentOptions.ElasticsearchUriKey, CcEnvironment.ElasticsearchUri);
+            AddValue(environmentOptions.ElasticsearchHostKey, CcEnvironment.ElasticsearchHost);
+            AddValue(environmentOptions.ElasticsearchUserKey, CcEnvironment.ElasticsearchUser);
+            AddValue(environmentOptions.ElasticsearchPasswordKey, CcEnvironment.ElasticsearchPassword);
+
+            AddValue(environmentOptions.KibanaHostKey, CcEnvironment.KibanaHost);
+            AddValue(environmentOptions.KibanaUserKey, CcEnvironment.KibanaUser);
+            AddValue(environmentOptions.KibanaPasswordKey, CcEnvironment.KibanaPassword);
+
+            AddValue(environmentOptions.ApmHostKey, CcEnvironment.ApmHost);
+            AddValue(environmentOptions.ApmAuthTokenKey, CcEnvironment.ApmAuthToken);
+            AddValue(environmentOptions.ApmUserKey, CcEnvironment.ApmUser);
+            AddValue(environmentOptions.ApmPasswordKey, CcEnvironment.ApmPassword);
         }
 
         private void AddValue(string key, string? value)
