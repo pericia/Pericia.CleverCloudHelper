@@ -130,8 +130,8 @@ ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnviron
 | ES_ADDON_KIBANA_HOST      | KibanaHost            | Kibana:Host                  | string |
 | ES_ADDON_KIBANA_USER      | KibanaUser            | Kibana:User                  | string |
 | ES_ADDON_KIBANA_PASSWORD  | KibanaPassword        | Kibana:Password              | string |
-| ES_ADDON_APM_HOST         | ApmHost               | Apm:Host                     | string |
-| ES_ADDON_APM_AUTH_TOKEN   | ApmAuthToken          | Apm:AuthToken                | string |
-| ES_ADDON_APM_USER         | ApmUser               | Apm:User                     | string |
-| ES_ADDON_APM_PASSWORD     | ApmPassword           | Apm:Password                 | string |
+| ES_ADDON_APM_HOST         | ApmHost               | ElasticApm:ServerUrl         | string |
+| ES_ADDON_APM_AUTH_TOKEN   | ApmAuthToken          | ElasticApm:SecretToken       | string |
+| ES_ADDON_APM_USER         | ApmUser               | ElasticApm:User              | string |
+| ES_ADDON_APM_PASSWORD     | ApmPassword           | ElasticApm:Password          | string |
 

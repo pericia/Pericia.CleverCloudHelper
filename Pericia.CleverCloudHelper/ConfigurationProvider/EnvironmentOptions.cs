@@ -47,10 +47,10 @@ namespace Pericia.CleverCloudHelper
         public string KibanaUserKey { get; set; } = "Kibana:User";
         public string KibanaPasswordKey { get; set; } = "Kibana:Password";
 
-        public string ApmHostKey { get; set; } = "Apm:Host";
-        public string ApmAuthTokenKey { get; set; } = "Apm:AuthToken";
-        public string ApmUserKey { get; set; } = "Apm:User";
-        public string ApmPasswordKey { get; set; } = "Apm:Password";
+        public string ApmHostKey { get; set; } = "ElasticApm:ServerUrl";
+        public string ApmAuthTokenKey { get; set; } = "ElasticApm:SecretToken";
+        public string ApmUserKey { get; set; } = "ElasticApm:User";
+        public string ApmPasswordKey { get; set; } = "ElasticApm:Password";
 
     }
 }
