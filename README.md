@@ -134,4 +134,8 @@ ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnviron
 | ES_ADDON_APM_AUTH_TOKEN   | ApmAuthToken          | ElasticApm:SecretToken       | string |
 | ES_ADDON_APM_USER         | ApmUser               | ElasticApm:User              | string |
 | ES_ADDON_APM_PASSWORD     | ApmPassword           | ElasticApm:Password          | string |
+| CELLAR_ADDON_HOST         | CellarHost            | Cellar:Host                  | string |
+| CELLAR_ADDON_KEY_ID       | CellarKeyId           | Cellar:KeyId                 | string |
+| CELLAR_ADDON_KEY_SECRET   | CellarKeySecret       | Cellar:KeySecret             | string |
+| BUCKET_HOST               | BucketHost            | Bucket:Host                  | string |
 

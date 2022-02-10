@@ -116,6 +116,13 @@ namespace Pericia.CleverCloudHelper
         public static string? ApmUser => Environment.GetEnvironmentVariable("ES_ADDON_APM_USER");
         public static string? ApmPassword => Environment.GetEnvironmentVariable("ES_ADDON_APM_PASSWORD");
 
+        // Cellar
+        public static string? CellarHost => Environment.GetEnvironmentVariable("CELLAR_ADDON_HOST");
+        public static string? CellarKeyId => Environment.GetEnvironmentVariable("CELLAR_ADDON_KEY_ID");
+        public static string? CellarKeySecret => Environment.GetEnvironmentVariable("CELLAR_ADDON_KEY_SECRET");
+
+        // Bucket
+        public static string? BucketHost => Environment.GetEnvironmentVariable("BUCKET_HOST");
     }
 
 }

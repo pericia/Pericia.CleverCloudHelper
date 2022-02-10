@@ -59,6 +59,12 @@ namespace Pericia.CleverCloudHelper
             AddValue(environmentOptions.ApmAuthTokenKey, CcEnvironment.ApmAuthToken);
             AddValue(environmentOptions.ApmUserKey, CcEnvironment.ApmUser);
             AddValue(environmentOptions.ApmPasswordKey, CcEnvironment.ApmPassword);
+
+            AddValue(environmentOptions.CellarHostKey, CcEnvironment.CellarHost);
+            AddValue(environmentOptions.CellarKeyIdKey, CcEnvironment.CellarKeyId);
+            AddValue(environmentOptions.CellarKeySecretKey, CcEnvironment.CellarKeySecret);
+            
+            AddValue(environmentOptions.BucketHostKey, CcEnvironment.BucketHost);
         }
 
         private void AddValue(string key, string? value)

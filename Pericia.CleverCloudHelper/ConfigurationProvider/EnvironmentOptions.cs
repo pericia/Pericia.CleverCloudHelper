@@ -52,5 +52,11 @@ namespace Pericia.CleverCloudHelper
         public string ApmUserKey { get; set; } = "ElasticApm:User";
         public string ApmPasswordKey { get; set; } = "ElasticApm:Password";
 
+        public string CellarHostKey { get; set; } = "Cellar:Host";
+        public string CellarKeyIdKey { get; set; } = "Cellar:KeyId";
+        public string CellarKeySecretKey { get; set; } = "Cellar:KeySecret";
+
+        public string BucketHostKey { get; set; } = "Bucket:Host";
+
     }
 }
