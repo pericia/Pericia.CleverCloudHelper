@@ -81,7 +81,7 @@ ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnviron
 
 | Variable d'environnement | Propriété          | Clé configuration              | Type     |
 | ------------------------ | ------------------ | ------------------------------ | -------- |
-| INSTANCE_NUMBER          | InstanceNumber     | CleverCloud:InstanceNumber     | int?     |
+| INSTANCE_NUMBER          | InstanceNumber     | CleverCloud:InstanceNumber     | int     |
 | INSTANCE_TYPE            | InstanceType       | CleverCloud:InstanceType       | string   |
 | INSTANCE_ID              | InstanceId         | CleverCloud:InstanceId         | string   |
 | CC_PRETTY_INSTANCE_NAME  | PrettyInstanceName | CleverCloud:PrettyInstanceName | string   |
@@ -134,8 +134,16 @@ ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnviron
 | ES_ADDON_APM_AUTH_TOKEN   | ApmAuthToken          | ElasticApm:SecretToken       | string |
 | ES_ADDON_APM_USER         | ApmUser               | ElasticApm:User              | string |
 | ES_ADDON_APM_PASSWORD     | ApmPassword           | ElasticApm:Password          | string |
+| ADDON_PULSAR_BINARY_PORT  | PulsarBinaryPort      | Pulsar:BinaryPort            | int   |
+| ADDON_PULSAR_BINARY_URL   | PulsarBinaryUrl       | Pulsar:BinaryUrl             | string |
+| ADDON_PULSAR_HOSTNAME     | PulsarHostName        | Pulsar:HostName              | string |
+| ADDON_PULSAR_HTTP_PORT    | PulsarHttpPort        | Pulsar:HttpPort              | int |
+| ADDON_PULSAR_HTTP_URL     | PulsarHttpUrl         | Pulsar:HttpUrl               | string |
+| ADDON_PULSAR_NAMESPACE    | PulsarNamespace       | Pulsar:Namespace             | string |
+| ADDON_PULSAR_TENANT       | PulsarTenant          | Pulsar:Tenant                | string |
+| ADDON_PULSAR_TOKEN        | PulsarToken           | Pulsar:Token                 | string |
+| BUCKET_HOST               | BucketHost            | Bucket:Host                  | string |
 | CELLAR_ADDON_HOST         | CellarHost            | Cellar:Host                  | string |
 | CELLAR_ADDON_KEY_ID       | CellarKeyId           | Cellar:KeyId                 | string |
 | CELLAR_ADDON_KEY_SECRET   | CellarKeySecret       | Cellar:KeySecret             | string |
-| BUCKET_HOST               | BucketHost            | Bucket:Host                  | string |
 

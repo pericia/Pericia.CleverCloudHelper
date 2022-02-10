@@ -8,34 +8,14 @@ namespace Pericia.CleverCloudHelper
     {
         // App and Instance info
 
-        public static int? InstanceNumber
-        {
-            get
-            {
-                var number = Environment.GetEnvironmentVariable("INSTANCE_NUMBER");
-                if (!string.IsNullOrEmpty(number) && int.TryParse(number, out int result))
-                {
-                    return result;
-                }
-
-                return null;
-            }
-        }
-
+        public static int? InstanceNumber => GetNullableIntValue("INSTANCE_NUMBER");
         public static string? InstanceType => Environment.GetEnvironmentVariable("INSTANCE_TYPE");
-
         public static string? InstanceId => Environment.GetEnvironmentVariable("INSTANCE_ID");
-
         public static string? PrettyInstanceName => Environment.GetEnvironmentVariable("CC_PRETTY_INSTANCE_NAME");
-
         public static string? AppId => Environment.GetEnvironmentVariable("APP_ID");
-
         public static string? AppHomePath => Environment.GetEnvironmentVariable("APP_HOME");
-
         public static string? DeploymentId => Environment.GetEnvironmentVariable("CC_DEPLOYMENT_ID");
-
         public static string? CommitId => Environment.GetEnvironmentVariable("COMMIT_ID");
-
         public static string[] ReverseProxyIps => Environment.GetEnvironmentVariable("CC_REVERSE_PROXY_IPS")?.Split(',') ?? new string[0];
 
 
@@ -70,6 +50,7 @@ namespace Pericia.CleverCloudHelper
         }
 
         // PostgresSql
+
         public static string? PgsqlHost => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_HOST");
         public static string? PgsqlPort => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_PORT");
         public static string? PgsqlDatabase => Environment.GetEnvironmentVariable("POSTGRESQL_ADDON_DB");
@@ -116,6 +97,17 @@ namespace Pericia.CleverCloudHelper
         public static string? ApmUser => Environment.GetEnvironmentVariable("ES_ADDON_APM_USER");
         public static string? ApmPassword => Environment.GetEnvironmentVariable("ES_ADDON_APM_PASSWORD");
 
+        // Pulsar
+        public static int? PulsarBinaryPort => GetNullableIntValue("ADDON_PULSAR_BINARY_PORT");      
+        public static string? PulsarBinaryUrl => Environment.GetEnvironmentVariable("ADDON_PULSAR_BINARY_URL");
+        public static string? PulsarHostName => Environment.GetEnvironmentVariable("ADDON_PULSAR_HOSTNAME");
+        public static int? PulsarHttpPort => GetNullableIntValue("ADDON_PULSAR_HTTP_PORT");
+        public static string? PulsarHttpUrl => Environment.GetEnvironmentVariable("ADDON_PULSAR_HTTP_URL");
+        public static string? PulsarNamespace => Environment.GetEnvironmentVariable("ADDON_PULSAR_NAMESPACE");
+        public static string? PulsarTenant => Environment.GetEnvironmentVariable("ADDON_PULSAR_TENANT");
+        public static string? PulsarToken => Environment.GetEnvironmentVariable("ADDON_PULSAR_TOKEN");
+
+
         // Cellar
         public static string? CellarHost => Environment.GetEnvironmentVariable("CELLAR_ADDON_HOST");
         public static string? CellarKeyId => Environment.GetEnvironmentVariable("CELLAR_ADDON_KEY_ID");
@@ -123,6 +115,17 @@ namespace Pericia.CleverCloudHelper
 
         // Bucket
         public static string? BucketHost => Environment.GetEnvironmentVariable("BUCKET_HOST");
+
+        private static int? GetNullableIntValue(string variable)
+        {
+            var number = Environment.GetEnvironmentVariable(variable);
+            if (!string.IsNullOrEmpty(number) && int.TryParse(number, out int result))
+            {
+                return result;
+            }
+
+            return null;
+        }
     }
 
 }

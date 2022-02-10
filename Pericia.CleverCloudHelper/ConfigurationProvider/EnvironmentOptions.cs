@@ -52,6 +52,15 @@ namespace Pericia.CleverCloudHelper
         public string ApmUserKey { get; set; } = "ElasticApm:User";
         public string ApmPasswordKey { get; set; } = "ElasticApm:Password";
 
+        public string PulsarBinaryPortKey { get; set; } = "Pulsar:BinaryPort";
+        public string PulsarBinaryUrlKey { get; set; } = "Pulsar:BinaryUrl";
+        public string PulsarHostNameKey { get; set; } = "Pulsar:HostName";
+        public string PulsarHttpPortKey { get; set; } = "Pulsar:HttpPort";
+        public string PulsarHttpUrlKey { get; set; } = "Pulsar:HttpUrl";
+        public string PulsarNamespaceKey { get; set; } = "Pulsar:Namespace";
+        public string PulsarTenantKey { get; set; } = "Pulsar:Tenant";
+        public string PulsarTokenKey { get; set; } = "Pulsar:Token";
+
         public string CellarHostKey { get; set; } = "Cellar:Host";
         public string CellarKeyIdKey { get; set; } = "Cellar:KeyId";
         public string CellarKeySecretKey { get; set; } = "Cellar:KeySecret";

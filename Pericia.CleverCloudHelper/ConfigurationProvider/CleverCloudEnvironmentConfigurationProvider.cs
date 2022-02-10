@@ -60,10 +60,19 @@ namespace Pericia.CleverCloudHelper
             AddValue(environmentOptions.ApmUserKey, CcEnvironment.ApmUser);
             AddValue(environmentOptions.ApmPasswordKey, CcEnvironment.ApmPassword);
 
+            AddValue(environmentOptions.PulsarBinaryPortKey, CcEnvironment.PulsarBinaryPort?.ToString());
+            AddValue(environmentOptions.PulsarBinaryUrlKey, CcEnvironment.PulsarBinaryUrl);
+            AddValue(environmentOptions.PulsarHostNameKey, CcEnvironment.PulsarHostName);
+            AddValue(environmentOptions.PulsarHttpPortKey, CcEnvironment.PulsarHttpPort?.ToString());
+            AddValue(environmentOptions.PulsarHttpUrlKey, CcEnvironment.PulsarHttpUrl);
+            AddValue(environmentOptions.PulsarNamespaceKey, CcEnvironment.PulsarNamespace);
+            AddValue(environmentOptions.PulsarTenantKey, CcEnvironment.PulsarTenant);
+            AddValue(environmentOptions.PulsarTokenKey, CcEnvironment.PulsarToken);
+
             AddValue(environmentOptions.CellarHostKey, CcEnvironment.CellarHost);
             AddValue(environmentOptions.CellarKeyIdKey, CcEnvironment.CellarKeyId);
             AddValue(environmentOptions.CellarKeySecretKey, CcEnvironment.CellarKeySecret);
-            
+
             AddValue(environmentOptions.BucketHostKey, CcEnvironment.BucketHost);
         }
 
