@@ -1,17 +1,17 @@
-# Pericia.CleverCloudHelper
+ï»¿# Pericia.CleverCloudHelper
 
-Un peu d'aide pour configurer et déployer son application ASP.NET Core dans [Clever Cloud](https://www.clever-cloud.com/)
+Un peu d'aide pour configurer et dÃ©ployer son application ASP.NET Core dans [Clever Cloud](https://www.clever-cloud.com/)
 
 ## Chargement des ConnectionStrings
 
-Lorsqu'on déploie une application liée à une base de données, les informations de connexion sont accessibles sous forme de variables d'environnement.
+Lorsqu'on dÃ©ploie une application liÃ©e Ã  une base de donnÃ©es, les informations de connexion sont accessibles sous forme de variables d'environnement.
 
 Pour les utiliser plus facilement, cette librairie les renvoie sous forme de ConnectionString :
 
     CcEnvironment.MySqlConnectionString
     CcEnvironment.PgsqlConnectionString
 
-Afin d'accéder à ces connection strings depuis la configuration, vous pouvez appeler `builder.AddCcConnectionStrings()` dans `ConfigureAppConfiguration` :
+Afin d'accÃ©der Ã  ces connection strings depuis la configuration, vous pouvez appeler `builder.AddCcEnvironment()` dans `ConfigureAppConfiguration` :
 
     public static IWebHost BuildWebHost(string[] args) =>
         WebHost.CreateDefaultBuilder(args)
@@ -32,7 +32,7 @@ Afin d'accéder à ces connection strings depuis la configuration, vous pouvez app
             .Build();
 
 
-Afin de pouvoir utiliser des valeurs différentes sur son poste de développement, ajoutez les chaines de connexion dans votre fichier `appsettings.Development.json` ou vos user secrets
+Afin de pouvoir utiliser des valeurs diffÃ©rentes sur son poste de dÃ©veloppement, ajoutez les chaines de connexion dans votre fichier `appsettings.Development.json` ou vos user secrets
 
     {
         "ConnectionStrings": {
@@ -49,9 +49,9 @@ Ainsi, vos chaines de connexion sont accessibles depuis `IConfiguration` :
 
 ## Autorisation du reverse-proxy Clever Cloud
 
-Une fois déployée dans Clever Cloud, votre application sera derrière un load-balancer, et il vous faudra donc [la configurer en conséquence](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer).
+Une fois dÃ©ployÃ©e dans Clever Cloud, votre application sera derriÃ¨re un load-balancer, et il vous faudra donc [la configurer en consÃ©quence](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/proxy-load-balancer).
 
-Ajoutez l'appel à la méthode `services.ConfigureCcProxy();` dans `ConfigureServices`, et `app.UseForwardedHeaders();` au début de `Configure` :
+Ajoutez l'appel Ã  la mÃ©thode `services.ConfigureCcProxy();` dans `ConfigureServices`, et `app.UseForwardedHeaders();` au dÃ©but de `Configure` :
 
 
     public void ConfigureServices(IServiceCollection services)
@@ -73,13 +73,13 @@ Ajoutez l'appel à la méthode `services.ConfigureCcProxy();` dans `ConfigureServi
 ## Variables d'environnement
 
 [Les principales variables d'environnement](https://www.clever-cloud.com/doc/reference/reference-environment-variables/) sont accessibles depuis la classe statique `CcEnvironment`,
-ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnvironment()`).
+ou depuis `IConfiguration` (si vous avez appelÃ© la mÃ©thode `builder.AddCcEnvironment()`).
 
 
 
 ### Common
 
-| Variable d'environnement | Propriété          | Clé configuration              | Type     |
+| Variable d'environnement | PropriÃ©tÃ©          | ClÃ© configuration              | Type     |
 | ------------------------ | ------------------ | ------------------------------ | -------- |
 | INSTANCE_NUMBER          | InstanceNumber     | CleverCloud:InstanceNumber     | int     |
 | INSTANCE_TYPE            | InstanceType       | CleverCloud:InstanceType       | string   |
@@ -93,7 +93,7 @@ ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnviron
 
 ### .NET
 
-| Variable d'environnement | Propriété          | Type   |
+| Variable d'environnement | PropriÃ©tÃ©          | Type   |
 | ------------------------ | ------------------ | ------ |
 | CC_DOTNET_VERSION        | DotnetVersion      | string |
 | CC_DOTNET_PROJ           | DotnetProj         | string |
@@ -103,7 +103,7 @@ ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnviron
 
 ### Addons
 
-| Variable d'environnement  | Propriété             | Clé configuration            | Type   |
+| Variable d'environnement  | PropriÃ©tÃ©             | ClÃ© configuration            | Type   |
 | ------------------------- | --------------------- | ---------------------------- | ------ |
 | POSTGRESQL_ADDON_HOST     | PgsqlHost             | PostgreSql:Host              | string |
 | POSTGRESQL_ADDON_PORT     | PgsqlPort             | PostgreSql:Port              | string |
