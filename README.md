@@ -1,5 +1,9 @@
 ﻿# Pericia.CleverCloudHelper
 
+[![Build status](https://dev.azure.com/glacasa/GithubBuilds/_apis/build/status/Pericia.CleverCloudHelper-CI)](https://dev.azure.com/glacasa/GithubBuilds/_build/latest?definitionId=84)
+
+[![NuGet](https://img.shields.io/nuget/v/Pericia.CleverCloudHelper.svg)](https://www.nuget.org/packages/Pericia.CleverCloudHelper/)
+
 Un peu d'aide pour configurer et déployer son application ASP.NET Core dans [Clever Cloud](https://www.clever-cloud.com/)
 
 ## Chargement des ConnectionStrings
