@@ -117,9 +117,12 @@ ou depuis `IConfiguration` (si vous avez appelé la méthode `builder.AddCcEnvir
 | MYSQL_ADDON_USER          | MysqlUser             | MySql:User                   | string |
 | MYSQL_ADDON_PASSWORD      | MysqlPassword         | MySql:Password               | string |
 |                           | MySqlConnectionString | ConnectionStrings:MySql      | string |
+| MONGODB_ADDON_HOST        | MongodbHost           | MongoDb:Host                 | string |
 | MONGODB_ADDON_DB          | MongodbDb             | MongoDb:Database             | string |
 | MONGODB_ADDON_USER        | MongodbUser           | MongoDb:User                 | string |
 | MONGODB_ADDON_PASSWORD    | MongodbPassword       | MongoDb:Password             | string |
+| MONGODB_ADDON_PORT        | MongodbPort           | MongoDb:Port                 | string |
+| MONGODB_ADDON_URI         | MongodbUri            | ConnectionStrings:MongoDb    | string |
 | REDIS_HOST                | RedisHost             | Redis:Host                   | string |
 | REDIS_PORT                | RedisPort             | Redis:Port                   | string |
 | REDIS_PASSWORD            | RedisPassword         | Redis:Password               | string |

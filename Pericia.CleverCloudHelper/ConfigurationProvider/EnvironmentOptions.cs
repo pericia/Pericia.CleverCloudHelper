@@ -29,9 +29,12 @@ namespace Pericia.CleverCloudHelper
         public string MySqlPortKey { get; set; } = "MySql:Port";
         public string MySqlConnStringKey { get; set; } = "ConnectionStrings:MySql";
 
+        public string MongodbHostKey { get; set; } = "MongoDb:Host";
         public string MongodbDbKey { get; set; } = "MongoDb:Database";
         public string MongodbUserKey { get; set; } = "MongoDb:User";
         public string MongodbPasswordKey { get; set; } = "MongoDb:Password";
+        public string MongodbPortKey { get; set; } = "MongoDb:Port";
+        public string MongodbUriKey { get; set; } = "ConnectionStrings:MongoDb";
 
         public string RedisHostKey { get; set; } = "Redis:Host";
         public string RedisPortKey { get; set; } = "Redis:Port";

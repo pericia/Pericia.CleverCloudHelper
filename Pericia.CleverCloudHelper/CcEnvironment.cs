@@ -71,9 +71,12 @@ namespace Pericia.CleverCloudHelper
         }
 
         // MongoDB
+        public static string? MongodbHost => Environment.GetEnvironmentVariable("MONGODB_ADDON_HOST");
         public static string? MongodbDb => Environment.GetEnvironmentVariable("MONGODB_ADDON_DB");
         public static string? MongodbUser => Environment.GetEnvironmentVariable("MONGODB_ADDON_USER");
         public static string? MongodbPassword => Environment.GetEnvironmentVariable("MONGODB_ADDON_PASSWORD");
+        public static string? MongodbPort => Environment.GetEnvironmentVariable("MONGODB_ADDON_PORT");
+        public static string? MongodbUri => Environment.GetEnvironmentVariable("MONGODB_ADDON_URI");
 
 
         // Redis

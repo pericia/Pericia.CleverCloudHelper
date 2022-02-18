@@ -38,9 +38,12 @@ namespace Pericia.CleverCloudHelper
             AddValue(environmentOptions.MySqlPortKey, CcEnvironment.MysqlPort);
             AddValue(environmentOptions.MySqlConnStringKey, CcEnvironment.MySqlConnectionString);
 
+            AddValue(environmentOptions.MongodbHostKey, CcEnvironment.MongodbHost);
             AddValue(environmentOptions.MongodbDbKey, CcEnvironment.MongodbDb);
             AddValue(environmentOptions.MongodbUserKey, CcEnvironment.MongodbUser);
             AddValue(environmentOptions.MongodbPasswordKey, CcEnvironment.MongodbPassword);
+            AddValue(environmentOptions.MongodbPortKey, CcEnvironment.MongodbPort);
+            AddValue(environmentOptions.MongodbUriKey, CcEnvironment.MongodbUri);
 
             AddValue(environmentOptions.RedisHostKey, CcEnvironment.RedisHost);
             AddValue(environmentOptions.RedisPortKey, CcEnvironment.RedisPort);
